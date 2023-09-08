@@ -1,0 +1,87 @@
+
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="common/adminheader :: common-header" />
+
+<body>
+	<div th:replace="common/adminheader :: navbar" />
+
+	<div class="container">
+		<div class="row">
+			<form class="form-horizontal" th:action="@{/userAdminControl/add}" method="post"
+				enctype="multipart/form-data">
+				<fieldset>
+					<legend class="center-block">
+						New User Information<span style="font-size: small"> * is a
+							required field</span>
+					</legend>
+
+					<!-- title -->
+					<div class="form-group">
+						<label class="col-md-2 control-label" for="username">* username</label>
+						<div class="col-md-8">
+							<input type="text" name="username" class="form-control" id="username"
+								th:value="${user.username}" required="required" placeholder="username" />
+							<span class="help-block">username of the user</span>
+						</div>
+					</div>
+
+					<!-- author -->
+					<div class="form-group">
+						<label class="col-md-2 control-label" for="firstname">* FirstName</label>
+						<div class="col-md-8">
+							<input type="text" name="firstname" class="form-control" id="firstname"
+								th:value="${user.firstName}" required="required"
+								placeholder="firstName" /> <span class="help-block">FirstName of the user</span>
+						</div>
+					</div>
+
+					<!-- publisher -->
+					<div class="form-group">
+						<label class="col-md-2 control-label" for="lastname">LastName</label>
+						<div class="col-md-8">
+							<input type="text" name="lastname" class="form-control"
+								id="lastname" th:value="${user.lastName}"
+								placeholder="lastName" /> <span class="help-block">LastName	of the user</span>
+						</div>
+					</div>
+
+					<!-- pages -->
+					<div class="form-group">
+						<label class="col-md-2 control-label" for="email">email</label>
+
+						<div class="col-md-8">
+							<input type="email" name="email" class="form-control"
+								id="email" th:value="${user.email}"
+								placeholder="email" /> <span class="help-block">email
+								of pages of the user</span>
+						</div>
+					</div>
+
+					<div class="form-group">
+						<label class="col-md-2 control-label" for="password">password</label>
+
+						<div class="col-md-8">
+							<input type="password" name="password" class="form-control"
+								   id="password" th:value="${user.password}"
+								   placeholder="password" /> <span class="help-block">password
+								of pages of the user</span>
+						</div>
+					</div>
+
+
+					<div class="form-group">
+						<div class="col-md-2"></div>
+						<div class="col-md-8">
+							<button type="submit" class="btn btn-success">Add User</button>
+							<a class="btn btn-danger" th:href="@{/}">Cancel</a>
+						</div>
+					</div>
+				</fieldset>
+			</form>
+		</div>
+	</div>
+
+	<div th:replace="common/adminheader :: body-bottom-scripts"></div>
+</body>
+</html>
