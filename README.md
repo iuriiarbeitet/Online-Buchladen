@@ -25,7 +25,10 @@ Dies ist ein Projekt für einen Online-Buchladen, der mit modernen Technologien 
   - MySQL
 - **Build-Tool**: Maven / Gradle
 
-## Installation
+## Test
+  - jUnit
+  - Mockito
+  - Spring Boot Test
 
 ### Voraussetzungen
 
